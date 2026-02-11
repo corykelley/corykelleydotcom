@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { siteConfig } from '$lib/config';
-	import ThemeToggle from './ThemeToggle.svelte';
 	import SocialLinks from './SocialLinks.svelte';
 
 	const links = [
@@ -31,9 +30,9 @@
 
 <header
 	class="fixed top-0 right-0 left-0 z-50 transition-all duration-300
-		{scrolled ? 'border-b border-border bg-base/80 backdrop-blur-xl' : 'bg-transparent'}"
+		{scrolled ? 'bg-base/60 backdrop-blur-xl' : 'bg-transparent'}"
 >
-	<nav class="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
+	<nav class="mx-auto flex h-24 max-w-6xl items-center justify-between px-8">
 		<!-- Logo -->
 		<a
 			href="/"
@@ -59,12 +58,10 @@
 			<div class="mx-2 h-5 w-px bg-border"></div>
 
 			<SocialLinks class="hidden lg:flex" />
-			<ThemeToggle />
 		</div>
 
 		<!-- Mobile controls -->
 		<div class="flex items-center gap-1 md:hidden">
-			<ThemeToggle />
 			<button
 				onclick={() => (mobileOpen = !mobileOpen)}
 				class="flex h-9 w-9 items-center justify-center rounded-lg text-muted transition-colors hover:bg-surface hover:text-foreground"
@@ -88,8 +85,8 @@
 
 	<!-- Mobile menu -->
 	{#if mobileOpen}
-		<div class="border-t border-border bg-base/95 backdrop-blur-xl md:hidden">
-			<div class="flex flex-col gap-1 px-6 py-4">
+		<div class="bg-base/90 backdrop-blur-xl md:hidden">
+			<div class="flex flex-col gap-1 px-8 py-4">
 				{#each links as link}
 					<a
 						href={link.href}

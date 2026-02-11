@@ -2,9 +2,6 @@
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/jetbrains-mono';
 
-/* ── Class-based dark mode ── */
-@custom-variant dark (&:where(.dark, .dark *));
-
 /* ── Design tokens ── */
 @theme {
 	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -19,26 +16,15 @@
 	--color-border: var(--c-border);
 }
 
-/* ── Light palette ── */
+/* ── Dark-only palette ── */
 :root {
-	--c-base: #fafafa;
-	--c-surface: #ffffff;
-	--c-foreground: #0f172a;
-	--c-muted: #64748b;
-	--c-accent: #6366f1;
-	--c-accent-hover: #4f46e5;
-	--c-border: #e2e8f0;
-}
-
-/* ── Dark palette ── */
-.dark {
-	--c-base: #0b0f1a;
-	--c-surface: #131825;
-	--c-foreground: #e2e8f0;
-	--c-muted: #94a3b8;
-	--c-accent: #818cf8;
-	--c-accent-hover: #a5b4fc;
-	--c-border: #1e293b;
+	--c-base: #171717;
+	--c-surface: #222222;
+	--c-foreground: #e5e5e5;
+	--c-muted: #a3a3a3;
+	--c-accent: #f97316;
+	--c-accent-hover: #fb923c;
+	--c-border: #2a2a2a;
 }
 
 /* ── Base styles ── */
@@ -46,13 +32,7 @@ html {
 	background-color: var(--c-base);
 	color: var(--c-foreground);
 	scroll-behavior: smooth;
-}
-
-html,
-body {
-	transition:
-		background-color 0.3s ease,
-		color 0.3s ease;
+	scrollbar-gutter: stable;
 }
 
 /* ── Scroll-triggered animations ── */
@@ -91,27 +71,6 @@ body {
 		opacity: 1;
 		transform: none;
 		transition: none;
-	}
-}
-
-/* ── Starfield twinkle ── */
-@keyframes twinkle {
-	0%,
-	100% {
-		opacity: var(--star-opacity, 0.6);
-	}
-	50% {
-		opacity: 0.15;
-	}
-}
-
-/* ── Cloud drift ── */
-@keyframes drift {
-	0% {
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(40px);
 	}
 }
 

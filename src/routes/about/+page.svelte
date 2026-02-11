@@ -23,27 +23,41 @@
 			A bit about me
 		</h1>
 
-		<!-- Narrative -->
-		<div class="fade-in space-y-6 leading-relaxed text-muted" use:inview={{ delay: 200 }}>
-			<p>
-				I'm a senior technical lead with close to a decade of experience building for the web.
-				My primary focus is front-end development — <span class="text-foreground">React, TypeScript, and
-				modern CSS architectures</span> — but I'm equally at home across the full stack.
-			</p>
+		<!-- Image + Narrative -->
+		<div class="flex flex-col gap-10 md:flex-row md:gap-12">
+			<div
+				class="fade-in shrink-0 md:w-72"
+				use:inview={{ delay: 150 }}
+			>
+				<img
+					src="/me.jpeg"
+					alt="Cory Kelley"
+					class="w-full rounded-2xl border border-border object-cover"
+				/>
+			</div>
 
-			<p>
-				I specialize in <span class="text-foreground">Shopify development</span>, where I've built
-				and shipped custom themes, complex Liquid architectures, and high-performance storefronts.
-				<span class="text-foreground">Tailwind CSS</span> is my styling tool of choice, and I've
-				used it extensively to build design systems and component libraries at scale.
-			</p>
+			<div class="fade-in space-y-6 leading-relaxed text-muted" use:inview={{ delay: 200 }}>
+				<p>
+					I've spent the better part of a decade deep in the weeds of web development. These days
+					I lead from the front as a Senior Technical Lead Developer — still writing code every day,
+					but also <span class="text-foreground">setting technical direction, unblocking teams, and
+					making sure the right things get built the right way</span>.
+				</p>
 
-			<p>
-				Beyond code, I care deeply about <span class="text-foreground">technical mentorship,
-				engineering culture, and building products</span> that genuinely serve their users.
-				I believe the best software comes from teams that communicate well, move with intention,
-				and hold themselves to a high standard of craft.
-			</p>
+				<p>
+					Most of my work lives in the <span class="text-foreground">Shopify Plus</span> ecosystem,
+					where I build custom themes, apps, and storefront experiences for enterprise and high-profile
+					brands. I've had the chance to partner with companies like
+					<span class="text-foreground">Caldera+Lab, Title Boxing, Singer Sewing, evo, and ButcherBox</span> —
+					projects where performance, polish, and scalability actually matter.
+				</p>
+
+				<p>
+					Outside of work, I'm a dad to <span class="text-foreground">twin boys</span>, a husband
+					to an amazing wife, and an avid <span class="text-foreground">Notre Dame football</span>
+					fan. Go Irish!
+				</p>
+			</div>
 		</div>
 
 		<!-- Focus areas -->
@@ -58,10 +72,10 @@
 			<div class="grid gap-4 sm:grid-cols-2">
 				{#each [
 					{ label: 'React & TypeScript', detail: 'Component architecture, state management, performance' },
-					{ label: 'Shopify & Liquid', detail: 'Theme builds, custom storefronts, section architecture' },
+					{ label: 'Shopify & Liquid', detail: 'Theme builds, custom storefronts, app development' },
+					{ label: 'Technical Leadership', detail: 'Code reviews, mentorship, architecture decisions' },
 					{ label: 'Tailwind CSS', detail: 'Design systems, utility-first architecture, theming' },
 					{ label: 'JavaScript (ES6+)', detail: 'Vanilla JS, DOM APIs, browser performance' },
-					{ label: 'Technical Leadership', detail: 'Code reviews, mentorship, architecture decisions' },
 					{ label: 'Full Stack', detail: 'Node.js, APIs, databases, deployment pipelines' }
 				] as area, i}
 					<div
@@ -81,7 +95,19 @@
 			<p class="mb-6 text-muted">
 				I'm always open to interesting conversations and new opportunities.
 			</p>
-			<SocialLinks class="justify-center" iconSize="h-6 w-6" />
+			<div class="flex flex-col items-center gap-4">
+				<a
+					href="mailto:john.cory.kelley@gmail.com"
+					class="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
+				>
+					<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<rect width="20" height="16" x="2" y="4" rx="2" />
+						<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+					</svg>
+					john.cory.kelley@gmail.com
+				</a>
+				<SocialLinks class="justify-center" iconSize="h-6 w-6" />
+			</div>
 		</div>
 	</div>
 </section>

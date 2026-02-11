@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { siteConfig } from '$lib/config';
-	import ThemeToggle from './ThemeToggle.svelte';
 	import SocialLinks from './SocialLinks.svelte';
 
 	const links = [
@@ -11,7 +10,7 @@
 </script>
 
 <footer class="border-t border-border">
-	<div class="mx-auto max-w-5xl px-6 py-12">
+	<div class="mx-auto max-w-5xl px-6 py-16">
 		<div class="flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:justify-between">
 			<!-- Left: name + tagline -->
 			<div class="text-center sm:text-left">
@@ -33,11 +32,9 @@
 				{/each}
 			</div>
 
-			<!-- Right: social + theme -->
+			<!-- Right: social -->
 			<div class="flex items-center gap-2">
 				<SocialLinks />
-				<div class="h-5 w-px bg-border"></div>
-				<ThemeToggle />
 			</div>
 		</div>
 
