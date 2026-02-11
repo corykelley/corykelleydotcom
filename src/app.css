@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+
+/* ── Class-based dark mode ── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ── Design tokens ── */
+@theme {
+	--font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+	--font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+	--color-base: var(--c-base);
+	--color-surface: var(--c-surface);
+	--color-foreground: var(--c-foreground);
+	--color-muted: var(--c-muted);
+	--color-accent: var(--c-accent);
+	--color-accent-hover: var(--c-accent-hover);
+	--color-border: var(--c-border);
+}
+
+/* ── Light palette ── */
+:root {
+	--c-base: #fafafa;
+	--c-surface: #ffffff;
+	--c-foreground: #0f172a;
+	--c-muted: #64748b;
+	--c-accent: #6366f1;
+	--c-accent-hover: #4f46e5;
+	--c-border: #e2e8f0;
+}
+
+/* ── Dark palette ── */
+.dark {
+	--c-base: #0b0f1a;
+	--c-surface: #131825;
+	--c-foreground: #e2e8f0;
+	--c-muted: #94a3b8;
+	--c-accent: #818cf8;
+	--c-accent-hover: #a5b4fc;
+	--c-border: #1e293b;
+}
+
+/* ── Base styles ── */
+html {
+	background-color: var(--c-base);
+	color: var(--c-foreground);
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease;
+}
+
+/* ── Scroll-triggered animations ── */
+.fade-in {
+	opacity: 0;
+	transform: translateY(24px);
+	transition:
+		opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+	transition-delay: var(--delay, 0ms);
+}
+
+.fade-in.in-view {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.scale-in {
+	opacity: 0;
+	transform: scale(0.95);
+	transition:
+		opacity 0.5s ease,
+		transform 0.5s ease;
+	transition-delay: var(--delay, 0ms);
+}
+
+.scale-in.in-view {
+	opacity: 1;
+	transform: scale(1);
+}
+
+/* ── Respect user motion preferences ── */
+@media (prefers-reduced-motion: reduce) {
+	.fade-in,
+	.scale-in {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+/* ── Starfield twinkle ── */
+@keyframes twinkle {
+	0%,
+	100% {
+		opacity: var(--star-opacity, 0.6);
+	}
+	50% {
+		opacity: 0.15;
+	}
+}
+
+/* ── Cloud drift ── */
+@keyframes drift {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(40px);
+	}
+}
+
+/* ── Selection color ── */
+::selection {
+	background-color: var(--c-accent);
+	color: white;
+}
