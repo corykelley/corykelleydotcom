@@ -6,8 +6,8 @@ export const siteConfig = {
 	url: 'https://corykelley.com',
 	social: {
 		github: 'https://github.com/corykelley',
-		linkedin: 'https://linkedin.com/in/corykelley',
-		twitter: 'https://x.com/corykelley'
+		linkedin: 'https://linkedin.com/in/johncorykelley',
+		twitter: 'https://x.com/johncorykelley'
 	},
 	github: {
 		username: 'corykelley'
